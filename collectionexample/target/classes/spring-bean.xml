@@ -1,0 +1,31 @@
+<beans xmlns = "http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+   <context:component-scan base-package="com.hcl.collection.collectionexample."/>
+  
+   <bean name="address1" class="collectionexample.Address"> 
+   <property name="line1" value="2/115 Anna Nagar"/>
+   <property name="line2" value="Kaveripatinam"/>
+   <property name="City" value="Krishnagiri"/>
+   <property name="Pincode" value="635112"/>
+   </bean>
+   <bean name="employee" class="collectionexample.Employee">
+   <property name="employeeName" value="Sathish"/>
+   <property name="employeemobileNumber">
+<list>
+<value>9566259957</value>
+<value>9566259958</value>
+<value>0456625222615</value>
+</list>
+   </property>
+   <property name="employeesalary" value="40000"/>
+   <property name="Email" value="sathish@gmail.com"/>
+   <property name="address" ref="address1"/>
+   
+   </bean>
+   
+   </beans>

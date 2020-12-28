@@ -1,0 +1,39 @@
+<beans xmlns = "http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+   <context:component-scan base-package="com.hcl.courserecommender.courserecommender"/>
+  
+   <bean name="course1" class="courserecommenderexample.Course"> 
+   <property name="name" value="java"/>
+   <property name="mentor" value="sathish"/>
+   <property name="fee" value="1000"/>
+   </bean>
+   <bean name="course2" class="courserecommenderexample.Course"> 
+   <property name="name" value="Selenium"/>
+   <property name="mentor" value="kanimozhi"/>
+   <property name="fee" value="2000"/>
+   </bean>
+   <bean name="course3" class="courserecommenderexample.Course"> 
+   <property name="name" value="python"/>
+   <property name="mentor" value="Arun"/>
+   <property name="fee" value="500"/>
+   </bean>
+   <bean name="Courselist" class="courserecommenderexample.CourseList">
+   <property name="courselist" >
+<list>
+<ref bean="course1"/>
+<ref bean="course2"/>
+<ref bean="course3"/>
+</list>
+   </property>
+   <property name="employeesalary" value="40000"/>
+   <property name="Email" value="sathish@gmail.com"/>
+   <property name="address" ref="address1"/>
+   
+   </bean>
+   
+   </beans>
